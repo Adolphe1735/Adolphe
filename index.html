@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS VUNGU - Freedom, Knowledge, Respect</title>
+    <style>
+        /* Global Styles with Enhanced Variables */
+        :root {
+            --primary-blue: #1976d2;
+            --secondary-blue: #1565c0;
+            --accent-green: #4caf50;
+            --accent-yellow: #ffeb3b;
+            --accent-purple: #7b1fa2;
+            --light-bg: #f9f9f9;
+            --dark-text: #333;
+            --white: #ffffff;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.2);
+            --gradient-primary: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            --gradient-secondary: linear-gradient(135deg, #1976d2, #7b1fa2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: var(--gradient-primary);
+            color: var(--dark-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header with Enhanced Design */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--gradient-secondary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-out;
+            backdrop-filter: blur(10px);
+            border-bottom: 3px solid var(--accent-yellow);
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, var(--white), var(--accent-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .logo h1:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-yellow);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--accent-yellow);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(rgba(25, 118, 210, 0.9), rgba(123, 31, 162, 0.9)), 
+                        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+            animation: pulseGlow 4s infinite alternate;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 2;
+            animation: typing 3.5s steps(30, end) 0.5s both, 
+                       float 3s ease-in-out infinite 4s;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out 2s both;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            z-index: 2;
+            animation: bounceIn 1s ease-out 3s both;
+        }
+
+        .hero-button {
+            padding: 1.2rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            min-width: 180px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .hero-button:hover::before {
+            left: 100%;
+        }
+
+        .hero-button.primary {
+            background: var(--accent-green);
+            color: var(--white);
+        }
+
+        .hero-button.primary:hover {
+            background: #388e3c;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(56, 142, 60, 0.4);
+        }
+
+        .hero-button.secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .hero-button.secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        /* Enhanced Theme Cards */
+        .themes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .theme-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+            border: 1px solid rgba(25, 118, 210, 0.1);
+        }
+
+        .theme-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 20px 40px var(--shadow-medium);
+        }
+
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-secondary);
+            transition: height 0.3s ease;
+        }
+
+        .theme-card:hover::before {
+            height: 10px;
+        }
+
+        .theme-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .theme-card:hover .theme-img {
+            transform: scale(1.1);
+        }
+
+        .theme-content {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .theme-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .theme-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        .theme-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .theme-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-button:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(25, 118, 210, 0.3);
+        }
+
+        /* Enhanced Interactive Sections */
+        .interactive-section {
+            padding: 5rem 2rem;
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .interactive-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        /* Enhanced Quiz Container */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quiz-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+        }
+
+        .quiz-progress {
+            height: 5px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-bar {
+            height: 100%;
+            background: var(--accent-green);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .quiz-question {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: var(--dark-text);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-option {
+            background: #f5f7fa;
+            border: 2px solid #e0e0e0;
+            padding: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .quiz-option:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+            transform: translateX(10px);
+        }
+
+        .quiz-option.correct {
+            background: #4caf50;
+            color: white;
+            border-color: #4caf50;
+        }
+
+        .quiz-option.incorrect {
+            background: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+
+        /* Enhanced Resource Cards */
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .resource-item {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(25, 118, 210, 0.1);
+        }
+
+        .resource-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 0;
+            background: var(--primary-blue);
+            transition: height 0.3s ease;
+        }
+
+        .resource-item:hover::before {
+            height: 100%;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(25, 118, 210, 0.2);
+        }
+
+        .resource-item i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Enhanced Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1.2rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            color: #999;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -0.5rem;
+            left: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--primary-blue);
+            background: var(--white);
+            padding: 0 0.5rem;
+        }
+
+        .submit-btn {
+            background: var(--accent-green);
+            color: var(--white);
+            border: none;
+            padding: 1.2rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            background: #388e3c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56, 142, 60, 0.4);
+        }
+
+        /* Enhanced Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 10% auto;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 450px;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .close {
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Dashboard Enhancements */
+        .dashboard {
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 3rem auto;
+            max-width: 1000px;
+            display: none;
+        }
+
+        .user-welcome {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .dashboard-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            background: #f0f0f0;
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: var(--gradient-secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--accent-yellow);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+            text-decoration: underline;
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--accent-green);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.4);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-green);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+            z-index: 3000;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(25, 118, 210, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-blue);
+            animation: spin 1s ease-in-out infinite;
+            margin: 2rem auto;
+        }
+
+        /* New Animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes pulseGlow {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.5; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 0.7; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Respect Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .themes {
+                grid-template-columns: 1fr;
+                padding: 3rem 1rem;
+            }
+
+            .resource-list {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 20% 1rem;
+                padding: 2rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero-button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .quiz-container,
+            .contact-form {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <header>
+        <div class="logo">
+            <h1><i class="fas fa-graduation-cap"></i> GS VUNGU</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#resources"><i class="fas fa-book"></i> Resources</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#" onclick="openLoginModal()"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Welcome to GS VUNGU</h2>
+        <p>Empowering minds with freedom, knowledge, and respect for all ages—from primary to O-level learners. Join our community of lifelong learners and educators committed to making a difference.</p>
+        <div class="hero-buttons">
+            <button class="hero-button primary" onclick="startQuiz()">
+                <i class="fas fa-play-circle"></i> Start Learning
+            </button>
+            <button class="hero-button secondary" onclick="showRandomFact()">
+                <i class="fas fa-lightbulb"></i> Random Fact
+            </button>
+        </div>
+        <div id="fact-display" class="fact-display"></div>
+        <div class="spinner" id="loadingSpinner" style="display: none;"></div>
+    </section>
+
+    <section id="about" class="themes">
+        <div class="theme-card">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                 alt="Freedom illustration" class="theme-img">
+            <div class="theme-content">
+                <h3><i class="fas fa-dove"></i> Freedom</h3>
+                <p>Discover inspiring stories and lessons about personal liberties, human rights, and the power of free thought. Learn how freedom shapes societies and empowers individuals.</p>
+                <button class="theme-button" onclick="showFreedomContent()">
+                    <i class="fas fa-arrow-right"></i> Explore Freedom
+                </button>
+            </div>
+        </div>
+        <div class="theme-card">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                 alt="Knowledge illustration" class="theme-img">
+            <div class="theme-content">
+                <h3><i class="fas fa-brain"></i> Knowledge</h3>
+                <p>Access comprehensive educational content tailored for primary and O-level students. Interactive lessons, quizzes, and resources across all subjects.</p>
+                <button class="theme-button" onclick="showKnowledgeContent()">
+                    <i class="fas fa-arrow-right"></i> Explore Knowledge
+                </button>
+            </div>
+        </div>
+        <div class="theme-card">
+            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                 alt="Respect illustration" class="theme-img">
+            <div class="theme-content">
+                <h3><i class="fas fa-heart"></i> Respect</h3>
+                <p>Learn about diversity, empathy, and community harmony. Develop social-emotional skills that foster understanding and respect in our global community.</p>
+                <button class="theme-button" onclick="showRespectContent()">
+                    <i class="fas fa-arrow-right"></i> Explore Respect
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="interactive-section">
+        <h2 class="section-title">Educational Resources</h2>
+        <div class="resource-list">
+            <div class="resource-item" onclick="openResource('math')">
+                <i class="fas fa-calculator"></i>
+                <h3>Math Lessons</h3>
+                <p>Interactive mathematics tutorials</p>
+            </div>
+            <div class="resource-item" onclick="openResource('science')">
+                <i class="fas fa-flask"></i>
+                <h3>Science Experiments</h3>
+                <p>Hands-on learning activities</p>
+            </div>
+            <div class="resource-item" onclick="openResource('history')">
+                <i class="fas fa-landmark"></i>
+                <h3>History Stories</h3>
+                <p>Engaging historical narratives</p>
+            </div>
+            <div class="resource-item" onclick="openResource('art')">
+                <i class="fas fa-palette"></i>
+                <h3>Art Activities</h3>
+                <p>Creative expression exercises</p>
+            </div>
+            <div class="resource-item" onclick="openResource('literature')">
+                <i class="fas fa-book-open"></i>
+                <h3>Literature Readings</h3>
+                <p>Classic and modern texts</p>
+            </div>
+            <div class="resource-item" onclick="openResource('ethics')">
+                <i class="fas fa-balance-scale"></i>
+                <h3>Ethics Discussions</h3>
+                <p>Moral philosophy and debates</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="interactive-section">
+        <h2 class="section-title">Quick Quiz</h2>
+        <div class="quiz-container">
+            <div class="quiz-progress">
+                <div class="quiz-progress-bar" id="quizProgress"></div>
+            </div>
+            <div id="quiz-content">
+                <div class="quiz-question" id="question-text">What is the capital of France?</div>
+                <div class="quiz-options" id="quiz-options">
+                    <button class="quiz-option" onclick="checkAnswer('Paris')">Paris</button>
+                    <button class="quiz-option" onclick="checkAnswer('London')">London</button>
+                    <button class="quiz-option" onclick="checkAnswer('Berlin')">Berlin</button>
+                    <button class="quiz-option" onclick="checkAnswer('Madrid')">Madrid</button>
+                </div>
+            </div>
+            <div id="quiz-result" class="quiz-result"></div>
+        </div>
+    </section>
+
+    <section id="contact" class="interactive-section">
+        <h2 class="section-title">Contact Us</h2>
+        <form class="contact-form" onsubmit="submitForm(event)" id="contactForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name"><i class="fas fa-user"></i> Your Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" placeholder=" " required>
+                <label for="email"><i class="fas fa-envelope"></i> Your Email</label>
+            </div>
+            <div class="form-group">
+                <textarea id="message" placeholder=" " rows="5" required></textarea>
+                <label for="message"><i class="fas fa-comment"></i> Your Message</label>
+            </div>
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+        <div id="form-response"></div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+                <span class="close" onclick="closeLoginModal()">&times;</span>
+            </div>
+            <form class="login-form" onsubmit="handleLogin(event)" id="loginForm">
+                <div class="form-group">
+                    <input type="text" id="username" placeholder=" " required>
+                    <label for="username"><i class="fas fa-user"></i> Username</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder=" " required>
+                    <label for="password"><i class="fas fa-lock"></i> Password</label>
+                </div>
+                <div class="form-group">
+                    <select id="role" required style="width: 100%; padding: 1.2rem; border: 2px solid #e0e0e0; border-radius: 10px; font-size: 1.1rem;">
+                        <option value="">Select Role</option>
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                        <option value="parent">Parent</option>
+                    </select>
+                </div>
+                <button type="
